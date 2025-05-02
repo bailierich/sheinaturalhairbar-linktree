@@ -110,7 +110,7 @@ export default function SheiNaturalLinktree() {
           {/* Link Buttons */}
           <div className="w-full space-y-4">
             <LinkButton
-              href="https://sheinatural.com/"
+              href="https://sheinaturalhairbar.as.me/schedule/e08fa5bf"
               label="Book An Appointment"
             />
             <LinkButton
