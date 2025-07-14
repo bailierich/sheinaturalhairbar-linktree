@@ -1,8 +1,21 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaInstagram, FaTiktok, FaYoutube, FaEnvelope } from "react-icons/fa";
+import ConsultationForm from "./ConsultationForm.jsx";
+import WaitlistForm from "./WaitlistForm.jsx";
 
-export default function SheiNaturalLinktree() {
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<SheiNaturalLinktree />} />
+      <Route path="/consultation" element={<ConsultationForm />} />
+      <Route path="/waitlist" element={<WaitlistForm />} />
+    </Routes>
+  );
+}
+
+function SheiNaturalLinktree() {
   return (
     <div
       className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden"
@@ -47,24 +60,18 @@ export default function SheiNaturalLinktree() {
         {/* Content Container */}
         <div className="relative z-10">
           {/* Logo Area */}
-          <div className="relative mb-6">
+          <div className="relative mb-6 -m-8">
             <motion.img
-              src="/logo.png"
-              alt="Shei Natural Hair Bar Logo"
+              src="/headerimg.png"
+              alt="Shei Natural Header"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-64 h-auto mx-auto relative z-10"
+              className="w-full h-auto relative z-10 rounded-t-2xl"
             />
           </div>
 
           {/* Business Info */}
-          <h1 className="text-3xl font-heading text-[#2D2D2D]/90 text-center font-semibold mb-2">
-            SHEI NATURAL HAIR BAR
-          </h1>
-          <p className="text-center text-[#2D2D2D]/80 font-body mb-6">
-            Where Your Hair Goals Become a Reality
-          </p>
 
           {/* Divider */}
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#db6118]/30 to-transparent mx-auto mb-6"></div>
@@ -125,6 +132,12 @@ export default function SheiNaturalLinktree() {
               href="https://www.amazon.com/shop/shopiamshei?ref_=cm_sw_r_cp_ud_aipsfshop_aipsfshopiamshei_S7583F5BVCSFAB6VYZZV"
               label="Shop Amazon Must Haves"
             />
+            <LinkButton
+              href="/waitlist"
+              label={`Join ${new Date().toLocaleString("default", {
+                month: "long",
+              })} Waitlist`}
+            />
           </div>
 
           {/* Footer */}
@@ -141,8 +154,8 @@ function LinkButton({ href, label, disabled = false }) {
   return (
     <motion.a
       href={disabled ? undefined : href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={href.startsWith("/") ? undefined : "_blank"}
+      rel={href.startsWith("/") ? undefined : "noopener noreferrer"}
       whileHover={{ scale: 1.02, y: -2 }}
       whileTap={{ scale: 0.98 }}
       className={`block w-full text-center rounded-xl py-4 px-6 text-md font-medium font-body transition-all duration-300 ${
