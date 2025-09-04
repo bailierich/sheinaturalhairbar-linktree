@@ -142,8 +142,8 @@ function SheiNaturalLinktree() {
 
           {/* Footer */}
           <footer className="mt-8 text-sm text-[#2D2D2D]/80 text-center">
-            © {new Date().getFullYear()} Shei Natural Hair Bar | All Rights
-            Reserved <br /> 28312 Franklin Rd Southfield, MI 48034
+            © {new Date().getFullYear()} Shei Natural Hair Bar
+            <br /> 28312 Franklin Rd Southfield, MI 48034
           </footer>
         </div>
       </motion.div>
