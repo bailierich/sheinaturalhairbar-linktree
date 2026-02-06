@@ -69,9 +69,9 @@ export default function RegularClientSignup() {
     setIsSubmitting(true);
 
     const airtableData = {
-      "Full Name": form.name,
+      Name: form.name,
       Email: form.email,
-      "Phone Number": form.phone,
+      Phone: form.phone,
     };
 
     try {
