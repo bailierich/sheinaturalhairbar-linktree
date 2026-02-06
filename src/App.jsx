@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaTiktok, FaYoutube, FaEnvelope } from "react-icons/fa";
 import ConsultationForm from "./ConsultationForm.jsx";
 import WaitlistForm from "./WaitlistForm.jsx";
+import RegularClientSignup from "./RegularClientSignup.jsx";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Route path="/" element={<SheiNaturalLinktree />} />
       <Route path="/consultation" element={<ConsultationForm />} />
       <Route path="/waitlist" element={<WaitlistForm />} />
+      <Route path="/regular-client-signup" element={<RegularClientSignup />} />
     </Routes>
   );
 }
