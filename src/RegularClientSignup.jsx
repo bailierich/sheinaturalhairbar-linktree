@@ -152,8 +152,7 @@ export default function RegularClientSignup() {
 
           <div className="relative z-10">
             <h2 className="text-3xl font-semibold text-center text-[#2D2D2D]/90 mb-8">
-              Join the {new Date().toLocaleString("default", { month: "long" })}{" "}
-              Regular Client Notification List
+              Join the Regular Client Notification List
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
